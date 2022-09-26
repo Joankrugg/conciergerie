@@ -1,7 +1,35 @@
-<%= simple_form_for @vip do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :phone %>
-  <%= f.button :submit %>
-<% end %>
+<form class="simple_form new_vip" id="new_vip" novalidate="novalidate" action="/vips" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="CC4d3rQtDc3onzZPvcBSFrJqbuX-8jyG1IeXUEZdvZPEmO2fzNrCXgMT0_1X_u4JnM4oOM5FGm6_0s1w26bzYg" autocomplete="off">
+  <div class="mb-3 string optional vip_first_name">
+    <label class="form-label string optional" for="vip_first_name">First name</label>
+    <input class="form-control string optional" type="text" name="vip[first_name]" id="vip_first_name">
+  </div>
+  <div class="mb-3 string optional vip_name">
+    <label class="form-label string optional" for="vip_name">Name</label>
+    <input class="form-control string optional" type="text" name="vip[name]" id="vip_name" method="POST">
+  </div>
+  <div class="mb-3 email optional vip_email">
+    <label class="form-label email optional" for="vip_email">Email</label>
+    <input class="form-control string email optional" type="email" name="vip[email]" id="vip_email">
+  </div>
+  <div class="mb-3 tel optional vip_phone">
+    <label class="form-label tel optional" for="vip_phone">Phone</label>
+    <input class="form-control string tel optional" type="tel" name="vip[phone]" id="vip_phone">
+  </div>
+  <input type="submit" name="commit" value="Create Vip" class="btn" data-disable-with="Create Vip">
+</form>
+<script>
+  document.getElementById("write").innerHTML = window.location.search;
+</script>
+
+<script>
+   var GET = {};
+   var queryString = window.location.search.replace(/^\?/, '');
+   queryString.split(/\&/).forEach(function(keyValuePair) {
+       var paramName = keyValuePair.replace(/=.*$/, ""); // some decoding is probably necessary
+       var paramValue = keyValuePair.replace(/^[^=]*\=/, ""); // some decoding is probably necessary
+       GET[paramName] = paramValue;
+   });
+   document.getElementById("vip_name").getElementsByTagName("input")[0].value = GET["form/title"];
+   document.getElementById("vip_name").getElementsByTagName("textarea")[0].value = GET["form/text"];
+</script>
