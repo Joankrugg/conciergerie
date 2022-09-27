@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "le_soleil_d_or", to:"pages#le_soleil_d_or"
 
   resources :vips, only: [:new, :create, :show]  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :brindos_vips, only: [:new, :create, :show]
   # Defines the root path route ("/")
 
 end

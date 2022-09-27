@@ -1,0 +1,2 @@
+class BrindosVip < ApplicationRecord
+end

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def brindos_lac_et_chateau
-    @vip = Vip.new
+    @brindos_vip = BrindosVip.new
   end
 
   def chateau_de_leognan
@@ -29,6 +29,12 @@ class PagesController < ApplicationController
 
   def chateau_de_theoule
     @vip = Vip.new
+  end
+
+  private
+
+  def vip_params
+    params.require(:vip).permit(:name, :first_name, :email, :phone)
   end
 
 end

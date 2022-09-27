@@ -37,7 +37,13 @@
   </div>
   <div class="row">
     <div class="col-4 mx-auto">
-      <%= render "vips/form" %>
+      <%= simple_form_for @brindos_vip do |f| %>
+        <%= f.input :name %>
+        <%= f.input :first_name %>
+        <%= f.input :email %>
+        <%= f.input :phone %>
+        <%= f.button :submit %>
+      <% end %>
     </div>
   </div>
 </div>

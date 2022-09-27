@@ -6,9 +6,10 @@ class VipsController < ApplicationController
   def create
     @vip = Vip.new(vip_params)
     if @vip.save
+      VipBrindosMailer.creation(@vip).deliver_now
       redirect_to root_path
     else
-      render :new
+    render :new
     end
   end
 

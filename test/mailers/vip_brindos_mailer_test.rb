@@ -1,6 +1,6 @@
 require "test_helper"
 
-class VipTest < ActiveSupport::TestCase
+class VipBrindosMailerTest < ActionMailer::TestCase
   # test "the truth" do
   #   assert true
   # end
