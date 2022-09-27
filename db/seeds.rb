@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+BestWay.create(name:'SMS')
+BestWay.create(name:'WhatsApp')
+BestWay.create(name:'Call')
+
+BestMoment.create(name:'Morning')
+BestMoment.create(name:'Midday')
+BestMoment.create(name:'Afternoon')
+BestMoment.create(name:'Evening')

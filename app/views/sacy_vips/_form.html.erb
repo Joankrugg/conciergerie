@@ -1,0 +1,6 @@
+<%= simple_form_for @sacy_vip do |f| %>
+  <%= f.input :phone %>
+  <%= f.association :best_way, as: :check_boxes %>
+  <%= f.input :email %>
+  <%= f.association :best_moment, as: :check_boxes %>
+<% end %>

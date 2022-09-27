@@ -7,34 +7,50 @@ class PagesController < ApplicationController
     @brindos_vip = BrindosVip.new
   end
 
+  def brindos_lac_et_chateau_en
+    @brindos_vip = BrindosVip.new
+  end
+
+  def domaine_de_raba
+    @raba_vip = RabaVip.new
+  end
+
+  def domaine_de_raba_en
+    @raba_vip = RabaVip.new
+  end
+
+  def chateau_de_sacy
+    @sacy_vip = SacyVip.new
+  end
+
+  def chateau_de_sacy_en
+    @sacy_vip = SacyVip.new
+  end
+
+  def le_soleil_d_or
+    @megeve_vip = MegeveVip.new
+  end
+
+  def le_soleil_d_or_en
+    @megeve_vip = MegeveVip.new
+  end
+
   def chateau_de_leognan
     @vip = Vip.new
   end
 
   def le_soleil_d_or
-    @vip = Vip.new
+    @megeve_vip = MegeveVip.new
   end
 
   def cocorico
     @vip = Vip.new
   end
 
-  def domaine_de_raba
-    @vip = Vip.new
-  end
-
-  def chateau_de_sacy
-    @vip = Vip.new
-  end
 
   def chateau_de_theoule
     @vip = Vip.new
   end
 
-  private
-
-  def vip_params
-    params.require(:vip).permit(:name, :first_name, :email, :phone)
-  end
 
 end

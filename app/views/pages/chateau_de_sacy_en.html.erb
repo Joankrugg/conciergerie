@@ -2,29 +2,28 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
-      <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_raba-par_meix0l.png', class: 'img-fluid logo' %>
+      <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_sacy-par_ftdiou.png', class: 'img-fluid logo' %>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
       <div class="flag">
-        <%= link_to domaine_de_raba_path do %>
+        <%= link_to chateau_de_sacy_path do %>
           <%= image_tag 'flag_of_france.png', class: 'avatar' %>
         <% end %>
-        <%= link_to domaine_de_raba_en_path do %>
+        <%= link_to chateau_de_sacy_en_path do %>
           <%= image_tag 'image_en.jpeg', class: 'avatar' %>
         <% end %>
       </div>
-      <p class="top">Notre conciergerie vous contactera très bientôt !</p>
 
-      <p class='polite'>Chère Madame XX / Cher Monsieur XX,</p>
+      <p class='polite'>Dear Mrs … / Dear Mr..</p>
 
-      <p class="text">Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ?</p>
+      <p class="text">In order to prepare your next stay, could you please tell us your preferred communication method? </p>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-       <%= simple_form_for @raba_vip do |f| %>
+      <%= simple_form_for @sacy_vip do |f| %>
         <%= f.input :phone %>
         <%= f.association :best_ways, as: :check_boxes %>
         <%= f.input :email %>
@@ -35,12 +34,11 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <p class= "regards">Dans l'attente de vous accueillir à Talence," </p>
-
-      <p class= "signature">William Numa</p>
+      <p class= "regards">We look forward to welcoming you in Sacy, </p>
+      <p class= "signature">Estelle Bichon</p>
       <p class= "signature">Maitre de Maison</p>
-      <p class= "signature">+33 (0) 5 57 26 58 28</p>
-      <p class= "signature">contact@domainederaba-talence.fr</p>
+      <p class= "signature">+33 (0)3 26 07 60 38</p>
+      <p class= "signature">contact@chateaudesacy-reims.fr</p>
     </div>
   </div>
 
