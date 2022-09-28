@@ -6,7 +6,7 @@ class RabaVipsController < ApplicationController
   def create
     @raba_vip = RabaVip.new(raba_vip_params)
     if @raba_vip.save
-      RabaVipMailer.creation(@brindos_vip).deliver_now
+      RabaVipMailer.creation(@raba_vip).deliver_now
       redirect_to root_path
     else
     render :new
