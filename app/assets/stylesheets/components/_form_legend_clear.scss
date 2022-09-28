@@ -8,3 +8,39 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.squaretag-item {
+  display: inline-block;
+}
+
+.squaretag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.squaretag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  font-family: 'Oswald';
+  font-weight: lighter;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: black;
+  color: $light-gray;
+  border: 1px solid #ffc65a;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  transition: .3s ease-in-out;
+}
+.squaretag-selector:hover + label {
+  background-color: #ffc65a;
+  border: 1px solid #ffc65a;
+  color: black;
+  transform: scale(1.1);
+}
+
+.squaretag-selector:checked + label {
+  background-color: #ffc65a;
+  color: black;
+}
