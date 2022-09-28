@@ -19,6 +19,6 @@ class SacyVipsController < ApplicationController
   private
 
   def sacy_vip_params
-    params.require(:sacy_vip).permit(:email, :phone, best_way: [:id], best_moment: [:id])
+    params.require(:brindos_vip).permit(:email, :phone, best_way_ids: [], best_moment_ids: [])
   end
 end

@@ -19,6 +19,6 @@ class MegeveVipsController < ApplicationController
   private
 
   def megeve_vip_params
-    params.require(:megeve_vip).permit(:email, :phone, best_way: [:id], best_moment: [:id])
+    params.require(:megeve_vip).permit(:email, :phone, best_way_ids: [], best_moment_ids: [])
   end
 end

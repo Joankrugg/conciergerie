@@ -7,3 +7,9 @@
     <p><%= n.name %></p>
   <% end %>
 <% end %>
+<p> Moments à privilégier pour le joindre </p>
+<% if @megeve_vip.best_moments.present? %>
+  <% @megeve_vip.best_moments.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% end %>
