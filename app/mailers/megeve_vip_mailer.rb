@@ -7,6 +7,6 @@ class MegeveVipMailer < ApplicationMailer
   #
   def creation(megeve_vip)
     @megeve_vip = megeve_vip # Instance variable => available in view
-    mail(to: @megeve_vip.email, subject: 'Vous souhaitez Être recontacté')
+    mail(to:'p.chambon@milesime-collection.com', subject: 'Vous souhaitez Être recontacté')
   end
 end
