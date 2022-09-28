@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_28_135816) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_28_143122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,6 +95,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_135816) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sacy_vip_best_moments", force: :cascade do |t|
+    t.bigint "sacy_vip_id", null: false
+    t.bigint "best_moment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["best_moment_id"], name: "index_sacy_vip_best_moments_on_best_moment_id"
+    t.index ["sacy_vip_id"], name: "index_sacy_vip_best_moments_on_sacy_vip_id"
+  end
+
+  create_table "sacy_vip_best_ways", force: :cascade do |t|
+    t.bigint "sacy_vip_id", null: false
+    t.bigint "best_way_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["best_way_id"], name: "index_sacy_vip_best_ways_on_best_way_id"
+    t.index ["sacy_vip_id"], name: "index_sacy_vip_best_ways_on_sacy_vip_id"
+  end
+
   create_table "sacy_vips", force: :cascade do |t|
     t.string "email"
     t.string "phone"
@@ -147,6 +165,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_28_135816) do
   add_foreign_key "megeve_vip_best_moments", "megeve_vips"
   add_foreign_key "megeve_vip_best_ways", "best_ways"
   add_foreign_key "megeve_vip_best_ways", "megeve_vips"
+  add_foreign_key "sacy_vip_best_moments", "best_moments"
+  add_foreign_key "sacy_vip_best_moments", "sacy_vips"
+  add_foreign_key "sacy_vip_best_ways", "best_ways"
+  add_foreign_key "sacy_vip_best_ways", "sacy_vips"
   add_foreign_key "vip_brindos_best_moments", "best_moments"
   add_foreign_key "vip_brindos_best_moments", "brindos_vips"
   add_foreign_key "vip_brindos_best_ways", "best_ways"
