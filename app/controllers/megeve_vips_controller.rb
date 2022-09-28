@@ -6,7 +6,7 @@ class MegeveVipsController < ApplicationController
   def create
     @megeve_vip = MegeveVip.new(megeve_vip_params)
     if @megeve_vip.save
-
+      MegeveVipMailer.creation(@brindos_vip).deliver_now
       redirect_to root_path
     else
     render :new
