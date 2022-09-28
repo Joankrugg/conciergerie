@@ -3,6 +3,10 @@ class SacyVipsController < ApplicationController
     @sacy_vip = SacyVip.new
   end
 
+  def new_en
+    @sacy_vip = SacyVip.new
+  end
+
   def create
     @sacy_vip = SacyVip.new(sacy_vip_params)
     if @sacy_vip.save

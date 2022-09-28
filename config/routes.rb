@@ -16,11 +16,28 @@ Rails.application.routes.draw do
   get "cocorico", to: "pages#cocorico"
   get "chateau_de_leognan", to:"pages#chateau_de_leognan"
 
-  resources :vips, only: [:new, :create, :show]  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :brindos_vips, only: [:new, :create, :show]
-  resources :sacy_vips, only: [:new, :create, :show]
-  resources :megeve_vips, only: [:new, :create, :show]
-  resources :raba_vips, only: [:new, :create, :show]
+# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :brindos_vips, only: [:new, :create, :show] do
+    collection do
+      get :new_en
+    end
+  end
+
+  resources :sacy_vips, only: [:new, :create, :show] do
+    collection do
+      get :new_en
+    end
+  end
+  resources :megeve_vips, only: [:new, :create, :show] do
+    collection do
+      get :new_en
+    end
+  end
+  resources :raba_vips, only: [:new, :create, :show] do
+    collection do
+      get :new_en
+    end
+  end
   # Defines the root path route ("/")
 
 end

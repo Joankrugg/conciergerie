@@ -3,6 +3,10 @@ class RabaVipsController < ApplicationController
     @raba_vip = RabaVip.new
   end
 
+  def new_en
+    @raba_vip = RabaVip.new
+  end
+
   def create
     @raba_vip = RabaVip.new(raba_vip_params)
     if @raba_vip.save

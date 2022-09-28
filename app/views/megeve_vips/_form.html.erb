@@ -1,6 +1,11 @@
 <%= simple_form_for @megeve_vip do |f| %>
   <%= f.input :phone %>
-  <%= f.association :best_way, as: :check_boxes %>
+  <%= f.association :best_ways, as: :check_boxes,
+    input_html: { class: "squaretag-selector" },
+    item_wrapper_class: 'squaretag-item' %>
   <%= f.input :email %>
-  <%= f.association :best_moment, as: :check_boxes %>
+  <%= f.association :best_moments, as: :check_boxes,
+    input_html: { class: "squaretag-selector" },
+    item_wrapper_class: 'squaretag-item' %>
+  <%= f.button :submit %>
 <% end %>

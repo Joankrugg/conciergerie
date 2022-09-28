@@ -3,6 +3,10 @@ class MegeveVipsController < ApplicationController
     @megeve_vip = MegeveVip.new
   end
 
+  def new_en
+    @megeve_vip = MegeveVip.new
+  end
+
   def create
     @megeve_vip = MegeveVip.new(megeve_vip_params)
     if @megeve_vip.save

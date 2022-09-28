@@ -1,7 +1,11 @@
 <%= simple_form_for @brindos_vip do |f| %>
-  <%= f.input :name %>
-  <%= f.input :first_name %>
-  <%= f.input :email %>
   <%= f.input :phone %>
+  <%= f.association :best_ways, as: :check_boxes,
+    input_html: { class: "squaretag-selector" },
+    item_wrapper_class: 'squaretag-item' %>
+  <%= f.input :email %>
+  <%= f.association :best_moments, as: :check_boxes,
+    input_html: { class: "squaretag-selector" },
+    item_wrapper_class: 'squaretag-item' %>
   <%= f.button :submit %>
 <% end %>

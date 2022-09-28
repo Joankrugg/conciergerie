@@ -3,6 +3,10 @@ class BrindosVipsController < ApplicationController
     @brindos_vip = BrindosVip.new
   end
 
+  def new_en
+    @brindos_vip = BrindosVip.new
+  end
+
   def create
     @brindos_vip = BrindosVip.new(brindos_vip_params)
     if @brindos_vip.save
