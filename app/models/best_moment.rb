@@ -1,6 +1,4 @@
 class BestMoment < ApplicationRecord
-  belongs_to :sacy_vip, optional: true
-  belongs_to :brindos_vip, optional: true
-  belongs_to :megeve_vip, optional: true
-  belongs_to :raba_vip, optional: true
+  has_many :vip_brindos_best_moments, dependent: :destroy
+  has_many :brindos_vips, through: :vip_brindos_best_moments
 end

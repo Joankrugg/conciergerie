@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_28_111948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,10 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "best_way_id"
-    t.bigint "best_moment_id"
-    t.index ["best_moment_id"], name: "index_brindos_vips_on_best_moment_id"
-    t.index ["best_way_id"], name: "index_brindos_vips_on_best_way_id"
   end
 
   create_table "megeve_vips", force: :cascade do |t|
@@ -72,10 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "best_way_id"
-    t.bigint "best_moment_id"
-    t.index ["best_moment_id"], name: "index_megeve_vips_on_best_moment_id"
-    t.index ["best_way_id"], name: "index_megeve_vips_on_best_way_id"
   end
 
   create_table "raba_vips", force: :cascade do |t|
@@ -83,10 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "best_way_id"
-    t.bigint "best_moment_id"
-    t.index ["best_moment_id"], name: "index_raba_vips_on_best_moment_id"
-    t.index ["best_way_id"], name: "index_raba_vips_on_best_way_id"
   end
 
   create_table "sacy_vips", force: :cascade do |t|
@@ -94,10 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "best_way_id"
-    t.bigint "best_moment_id"
-    t.index ["best_moment_id"], name: "index_sacy_vips_on_best_moment_id"
-    t.index ["best_way_id"], name: "index_sacy_vips_on_best_way_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,6 +96,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vip_brindos_best_moments", force: :cascade do |t|
+    t.bigint "brindos_vip_id", null: false
+    t.bigint "best_moment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["best_moment_id"], name: "index_vip_brindos_best_moments_on_best_moment_id"
+    t.index ["brindos_vip_id"], name: "index_vip_brindos_best_moments_on_brindos_vip_id"
+  end
+
+  create_table "vip_brindos_best_ways", force: :cascade do |t|
+    t.bigint "brindos_vip_id", null: false
+    t.bigint "best_way_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["best_way_id"], name: "index_vip_brindos_best_ways_on_best_way_id"
+    t.index ["brindos_vip_id"], name: "index_vip_brindos_best_ways_on_brindos_vip_id"
+  end
+
   create_table "vips", force: :cascade do |t|
     t.string "name"
     t.string "first_name"
@@ -123,12 +125,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_142911) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "brindos_vips", "best_moments"
-  add_foreign_key "brindos_vips", "best_ways"
-  add_foreign_key "megeve_vips", "best_moments"
-  add_foreign_key "megeve_vips", "best_ways"
-  add_foreign_key "raba_vips", "best_moments"
-  add_foreign_key "raba_vips", "best_ways"
-  add_foreign_key "sacy_vips", "best_moments"
-  add_foreign_key "sacy_vips", "best_ways"
+  add_foreign_key "vip_brindos_best_moments", "best_moments"
+  add_foreign_key "vip_brindos_best_moments", "brindos_vips"
+  add_foreign_key "vip_brindos_best_ways", "best_ways"
+  add_foreign_key "vip_brindos_best_ways", "brindos_vips"
 end

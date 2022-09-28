@@ -1,1 +1,9 @@
-creation.html.erb
+<h1>Bonjour Olivier</h1>
+
+<p><%= @brindos_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine</p>
+<p> Méthode(s) préférée(s)</p>
+<% if @brindos_vip.best_ways.present? %>
+  <% @brindos_vip.best_ways.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% end %>
