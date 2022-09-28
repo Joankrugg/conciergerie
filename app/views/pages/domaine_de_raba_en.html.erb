@@ -16,25 +16,24 @@
         <% end %>
       </div>
       <p class='polite'>Dear Mrs … / Dear Mr..</p>
-
       <p class="text">In order to prepare your next stay, could you please tell us your preferred communication method? </p>
-
-      <p class="text">Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ?</p>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-       <%= simple_form_for @raba_vip do |f| %>
-        <%= f.input :phone %>
-        <%= f.association :best_ways, as: :check_boxes,
-          input_html: { class: "squaretag-selector" },
-          item_wrapper_class: 'squaretag-item' %>
-        <%= f.input :email %>
-        <%= f.association :best_moments, as: :check_boxes,
-          input_html: { class: "squaretag-selector" },
-          item_wrapper_class: 'squaretag-item' %>
-        <%= f.button :submit %>
-      <% end %>
+      <div class="form">
+        <%= simple_form_for @raba_vip do |f| %>
+          <%= f.input :phone, label: 'Please acquaint your phone number', class: 'center' %>
+          <%= f.association :best_ways, as: :check_boxes,
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <%= f.input :email %>
+          <%= f.association :best_moments, as: :check_boxes,
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <%= f.button :submit, 'validate', id: 'validate' %>
+        <% end %>
+      </div>
     </div>
   </div>
 

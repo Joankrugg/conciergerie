@@ -9,6 +9,16 @@ legend ~ div.form-check:first-of-type {
   clear: left;
 }
 
+
+.form{
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  background-color: white;
+  padding: 30px;
+}
+
 .squaretag-item {
   display: inline-block;
 }
@@ -19,6 +29,11 @@ legend ~ div.form-check:first-of-type {
 }
 
 .squaretag-selector + label {
+  text-align: center;
+  border: 1px solid #b19753;
+  background-color: white;
+  color: #b19753;
+  border-radius: 6px;
   cursor: pointer;
   display: inline-block;
   font-size: 22px;
@@ -26,21 +41,38 @@ legend ~ div.form-check:first-of-type {
   font-weight: lighter;
   border-radius: 5px;
   padding: 5px 10px;
-  background-color: black;
-  color: $light-gray;
-  border: 1px solid #ffc65a;
   margin-right: 5px;
   margin-bottom: 5px;
   transition: .3s ease-in-out;
 }
 .squaretag-selector:hover + label {
-  background-color: #ffc65a;
-  border: 1px solid #ffc65a;
-  color: black;
+  color: white;
+  background-color: #b19753;
+  cursor: pointer;
   transform: scale(1.1);
 }
 
 .squaretag-selector:checked + label {
-  background-color: #ffc65a;
-  color: black;
+  color: white;
+  background-color: #b19753;
 }
+
+#validate{
+  text-align: center;
+  border: 1px solid #b19753;
+  background-color: white;
+  color: #b19753;
+  border-radius: 6px;
+  width: 100%;
+}
+
+#validate:hover{
+  color: white;
+  background-color: #b19753;
+  cursor: pointer;
+}
+
+input{
+  text-align: center;
+}
+
