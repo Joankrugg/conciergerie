@@ -1,5 +1,19 @@
-<h1>RabaVip#creation</h1>
+<h1>Bonjour William</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/raba_vip_mailer/creation.html.erb
-</p>
+<p><%= @raba_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine</p>
+<p> Méthode(s) préférée(s)</p>
+<% if @raba_vip.best_ways.present? %>
+  <% @raba_vip.best_ways.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% else %>
+  <p> Non renseigné </p>
+<% end %>
+<p> Moments à privilégier pour le joindre </p>
+<% if @raba_vip.best_moments.present? %>
+  <% @raba_vip.best_moments.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% else %>
+  <p> Non renseigné </p>
+<% end %>

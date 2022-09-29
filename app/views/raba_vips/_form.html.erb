@@ -10,6 +10,8 @@
     input_html: { class: "squaretag-selector" },
     item_wrapper_class: 'squaretag-item' %>
   <p>Et enfin par simple mesure de sécurité, veuillez confirmer les informations suivantes.</p>
+  <%= f.input :name %>
+  <%= f.input :first_name %>
   <%= f.input :email %>
   <p>Vous pouvez maintenant valider.</p>
   <%= f.button :submit, 'valider', id: 'validate' %>

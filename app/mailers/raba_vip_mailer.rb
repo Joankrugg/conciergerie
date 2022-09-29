@@ -6,7 +6,8 @@ class RabaVipMailer < ApplicationMailer
   #   en.raba_vip_mailer.creation.subject
   #
   def creation(raba_vip)
+    destination = 'p.chambon@millesime-collection.com'
     @raba_vip = raba_vip # Instance variable => available in view
-    mail(to: @raba_vip.email, subject: 'Vous souhaitez Être recontacté')
+    mail(to: destination, subject: 'Un client ayant réservé au Domaine de Raba souhaite être contacté par la conciergerie')
   end
 end

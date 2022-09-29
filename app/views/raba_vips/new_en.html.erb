@@ -1,10 +1,11 @@
 <div class="zone"></div>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
-      <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_raba-par_meix0l.png', class: 'img-fluid logo' %>
+  <div class="form">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
+        <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_raba-par_meix0l.png', class: 'img-fluid logo' %>
+      </div>
     </div>
-  </div>
   <div class="row">
     <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
       <div class="flag">
@@ -16,26 +17,40 @@
         <% end %>
       </div>
       <p class='polite'>Dear Guest</p>
-      <p class="text">In order to prepare your next stay, could you please tell us your preferred communication method? </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <div class="form">
-        <%= render 'form' %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <%= simple_form_for @raba_vip do |f| %>
+          <%= f.association :best_ways, as: :check_boxes,
+            label: 'In order to prepare your next stay, could you please tell us your preferred communication method?',
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <%= f.input :phone, label: 'Would you please acquaint your phone number' %>
+          <p>Which moment is the best to join you ? </p>
+          <%= f.association :best_moments, as: :check_boxes,
+            label: '',
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <p>Can you confirm the following informations for security purpose</p>
+          <%= f.input :name %>
+          <%= f.input :first_name %>
+          <%= f.input :email %>
+          <p>You now can process the validation</p>
+          <%= f.button :submit, 'validate', id: 'validate' %>
+        <% end %>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-
-      <p class= "regards">We look forward to welcoming you in Talence</p>
-      <p class= "signature">William Numa </p>
-      <p class= "signature">Maitre de Maison </p>
-      <p class= "signature">+33 (0) 5 57 26 58 28 </p>
-      <p class= "signature">contact@domainederaba-talence.fr</p>
+  <div class="form">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <p class= "signature">Dans l'attente de vous accueillir à Talence</p><br>
+        <p class= "signature">William Numa</p>
+        <p class= "signature">Maitre de Maison</p>
+        <p class= "signature">+33 (0) 5 57 26 58 28</p>
+        <p class= "signature">contact@domainederaba-talence.fr</p>
+      </div>
     </div>
   </div>
-
 </div>
