@@ -35,9 +35,9 @@
             input_html: { class: "squaretag-selector" },
             item_wrapper_class: 'squaretag-item' %>
           <p>Et enfin par simple mesure de sécurité, veuillez confirmer les informations suivantes.</p>
-          <%= f.input :name %>
-          <%= f.input :first_name %>
-          <%= f.input :email %>
+          <%= f.input :name, label: 'Nom' %>
+          <%= f.input :first_name, label: 'Prénom' %>
+          <%= f.input :email, label: 'Adresse Email'  %>
           <p>Vous pouvez maintenant valider.</p>
           <%= f.button :submit, 'valider', id: 'validate' %>
         <% end %>
@@ -47,7 +47,7 @@
   <div class="form">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-        <p class= "regards">Dans l'attente de vous accueillir à Sacy" </p>
+        <p class= "regards">Dans l'attente de vous accueillir à Sacy" </p><br>
         <p class='signature'>Estelle Bichon</p>
         <p class='signature'>Maitre de Maison</p>
         <p class='signature'>+33 (0)3 26 07 60 38</p>
