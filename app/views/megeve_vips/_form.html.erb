@@ -1,11 +1,18 @@
 <%= simple_form_for @megeve_vip do |f| %>
-  <%= f.input :phone %>
   <%= f.association :best_ways, as: :check_boxes,
+    label: 'Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ?',
     input_html: { class: "squaretag-selector" },
     item_wrapper_class: 'squaretag-item' %>
-  <%= f.input :email %>
+  <%= f.input :phone, label: 'Veuillez nous indiquer votre numéro de téléphone.' %>
+  <p>Quel est le meilleur moment pour vous joindre ? </p>
   <%= f.association :best_moments, as: :check_boxes,
+    label: '',
     input_html: { class: "squaretag-selector" },
     item_wrapper_class: 'squaretag-item' %>
-  <%= f.button :submit %>
+  <p>Et enfin par simple mesure de sécurité, veuillez confirmer les informations suivantes.</p>
+  <%= f.input :name %>
+  <%= f.input :first_name %>
+  <%= f.input :email %>
+  <p>Vous pouvez maintenant valider.</p>
+  <%= f.button :submit, 'valider', id: 'validate' %>
 <% end %>

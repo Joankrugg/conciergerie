@@ -1,44 +1,56 @@
 <div class="zone"></div>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
-      <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_GHSO-par_ewlqsb.png', class: 'img-fluid logo' %>
+  <div class="form">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
+        <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_GHSO-par_ewlqsb.png', class: 'img-fluid logo' %>
+      </div>
     </div>
-  </div>
   <div class="row">
     <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
       <div class="flag">
-        <%= link_to new_brindos_vip_path do %>
+        <%= link_to new_megeve_vip_path do %>
           <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1664307611/flag_of_france_pdulkk.png', class: 'avatar' %>
         <% end %>
-        <%= link_to new_en_brindos_vips_path do %>
+        <%= link_to new_en_megeve_vips_path do %>
           <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1664307598/image_en_diq4zx.jpg', class: 'avatar' %>
+        <% end %>
+      </div>
+      <p class='polite'>Dear Guest</p>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <%= simple_form_for @megeve_vip do |f| %>
+          <%= f.association :best_ways, as: :check_boxes,
+            label: 'In order to prepare your next stay, could you please tell us your preferred communication method?',
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <%= f.input :phone, label: 'Would you please acquaint your phone number' %>
+          <p>Which moment is the best to join you ? </p>
+          <%= f.association :best_moments, as: :check_boxes,
+            label: '',
+            input_html: { class: "squaretag-selector" },
+            item_wrapper_class: 'squaretag-item' %>
+          <p>Can you confirm the following informations for security purpose</p>
+          <%= f.input :name %>
+          <%= f.input :first_name %>
+          <%= f.input :email %>
+          <p>You now can process the validation</p>
+          <%= f.button :submit, 'validate', id: 'validate' %>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <p class="top">Our concierge will contact you very soon!</p>
-
-      <p class='polite'>Dear Mrs … / Dear Mr..</p>
-
-      <p class="text">In order to prepare your next stay, could you please tell us your preferred communication method? </p>
+  <div class="form">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <p class= "regards">Dans l'attente de vous accueillir à Megève</p>
+        Yann Watrigan
+        Maître de Maison
+        +33 (0)4 50 34 31 06
+        contact@lesoleildor-megeve.fr
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <%= render 'form' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <p class= "regards">We look forward to welcoming you in Megève</p>
-      <p class= 'signature'> Yann Watrigan </p>
-      <p class= 'signature'> Maître de Maison </p>
-      <p class= 'signature'> +33 (0)4 50 34 31 06 </p>
-      <p class= 'signature'> contact@lesoleildor-megeve.fr </p>
-    </div>
-  </div>
-
 </div>
