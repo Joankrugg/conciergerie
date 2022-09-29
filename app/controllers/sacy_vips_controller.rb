@@ -11,7 +11,7 @@ class SacyVipsController < ApplicationController
     @sacy_vip = SacyVip.new(sacy_vip_params)
     if @sacy_vip.save
       SacyVipMailer.creation(@sacy_vip).deliver_now
-      redirect_to root_path
+      redirect_to chateau_de_sacy_path
     else
     render :new
     end
@@ -23,6 +23,6 @@ class SacyVipsController < ApplicationController
   private
 
   def sacy_vip_params
-    params.require(:sacy_vip).permit(:email, :phone, best_way_ids: [], best_moment_ids: [])
+    params.require(:sacy_vip).permit(:email, :phone, :name, :first_name, best_way_ids: [], best_moment_ids: [])
   end
 end

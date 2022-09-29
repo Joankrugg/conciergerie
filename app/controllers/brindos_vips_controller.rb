@@ -11,7 +11,7 @@ class BrindosVipsController < ApplicationController
     @brindos_vip = BrindosVip.new(brindos_vip_params)
     if @brindos_vip.save
       VipBrindosMailer.creation(@brindos_vip).deliver_now
-      redirect_to root_path
+      redirect_to brindos_lac_et_chateau_path
     else
     render :new
     end

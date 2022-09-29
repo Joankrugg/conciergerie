@@ -1,5 +1,19 @@
-<h1>SacyVip#creation</h1>
+<h1>Bonjour Estelle</h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/sacy_vip_mailer/creation.html.erb
-</p>
+<p><%= @sacy_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine</p>
+<p> Méthode(s) préférée(s)</p>
+<% if @sacy_vip.best_ways.present? %>
+  <% @sacy_vip.best_ways.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% else %>
+  <p> Non renseigné </p>
+<% end %>
+<p> Moments à privilégier pour le joindre </p>
+<% if @sacy_vip.best_moments.present? %>
+  <% @sacy_vip.best_moments.each do |n| %>
+    <p><%= n.name %></p>
+  <% end %>
+<% else %>
+  <p> Non renseigné </p>
+<% end %>
