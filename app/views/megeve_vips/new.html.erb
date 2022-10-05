@@ -52,7 +52,7 @@
           <p>Et enfin par simple mesure de sécurité, veuillez confirmer les informations suivantes.</p>
           <%= f.input :name, label: 'Nom' %>
           <%= f.input :first_name, label: 'Prénom' %>
-          <%= f.input :email, label: 'Adresse Email'  %>
+          <%= f.input :email, label: 'Adresse Email', required: false  %>
           <p>Vous pouvez maintenant valider.</p>
           <%= f.button :submit, 'valider', id: 'validate' %>
         <% end %>

@@ -50,7 +50,7 @@
           <p>Can you confirm the following informations for security purpose</p>
           <%= f.input :name %>
           <%= f.input :first_name %>
-          <%= f.input :email %>
+          <%= f.input :email, required: false %>
           <p>You now can process the validation</p>
           <%= f.button :submit, 'validate', id: 'validate' %>
         <% end %>
