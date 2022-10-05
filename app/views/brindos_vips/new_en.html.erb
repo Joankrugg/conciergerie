@@ -23,7 +23,7 @@
       <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <%= simple_form_for @brindos_vip do |f| %>
           <fieldset class="form-group checkbox optional brindos_vip">
-            <legend class="col-form-label pt-0">Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ? </legend>
+            <legend class="col-form-label pt-0">In order to prepare your next stay, could you please tell us your preferred communication method? </legend>
             <input type="hidden" name="brindos_vip[best_way_id]" value="">
             <% BestWay.all[0..2].each do |best_way| %>
               <div class="squaretag-item">

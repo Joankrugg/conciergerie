@@ -24,16 +24,31 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <%= simple_form_for @raba_vip do |f| %>
-          <%= f.association :best_ways, as: :check_boxes,
-            label: 'Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ?',
-            input_html: { class: "squaretag-selector" },
-            item_wrapper_class: 'squaretag-item' %>
+          <fieldset class="form-group checkbox optional raba_vip">
+            <legend class="col-form-label pt-0">Afin de préparer votre prochain séjour, pourriez-vous s’il vous plait nous communiquer votre moyen de communication préféré ? </legend>
+            <input type="hidden" name="raba_vip[best_way_id]" value="">
+            <% BestWay.all[3..5].each do |best_way| %>
+              <div class="squaretag-item">
+                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_way.id %>"  name="raba_vip[best_way_id]" id="raba_vip_id_<%= best_way.id %>">
+                <label class="form-check-label collection_checkbox" for="raba_vip_id_<%= best_way.id %>">
+                  <%= best_way.name %>
+                </label>
+              </div>
+            <% end %>
+          </fieldset>
           <%= f.input :phone, label: 'Veuillez nous indiquer votre numéro de téléphone.' %>
-          <p>Quel est le meilleur moment pour vous joindre ? </p>
-          <%= f.association :best_moments, as: :check_boxes,
-            label: '',
-            input_html: { class: "squaretag-selector" },
-            item_wrapper_class: 'squaretag-item' %>
+          <fieldset class="form-group checkbox optional raba_vip">
+            <legend class="col-form-label pt-0">Quel est le meilleur moment pour vous joindre ? </legend>
+            <input type="hidden" name="raba_vip[best_moment_id]" value="">
+            <% BestMoment.all[4..8].each do |best_moment| %>
+              <div class="squaretag-item">
+                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_moment.id %>"  name="raba_vip[best_moment_id]" id="raba_vip_id_<%= best_moment.id %>">
+                <label class="form-check-label collection_check_boxes" for="raba_vip_id_<%= best_moment.id %>">
+                  <%= best_moment.name %>
+                </label>
+              </div>
+            <% end %>
+          </fieldset>
           <p>Et enfin par simple mesure de sécurité, veuillez confirmer les informations suivantes.</p>
           <%= f.input :name, label: 'Nom' %>
           <%= f.input :first_name, label: 'Prénom' %>
