@@ -1,4 +1,5 @@
 class BrindosVipsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @brindos_vip = BrindosVip.new
   end

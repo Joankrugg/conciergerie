@@ -1,4 +1,5 @@
 class SacyVipsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @sacy_vip = SacyVip.new
   end

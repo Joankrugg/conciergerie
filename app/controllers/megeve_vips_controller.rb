@@ -1,4 +1,5 @@
 class MegeveVipsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @megeve_vip = MegeveVip.new
   end
