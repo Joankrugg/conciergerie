@@ -1,13 +1,25 @@
 <div class="zone"></div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 mx-auto">
       <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_raba-par_meix0l.png', class: 'img-fluid logo' %>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
-      <%= image_tag 'https://media0.giphy.com/media/241LJn6LFZhlkhrumM/giphy.gif?cid=ecf05e47ij7njsktqv2iosdmhyl5z48qeojmxxdt7ssqlswe&rid=giphy.gif&ct=g' , class: 'img-fluid'%>
+      <div class="flag">
+        <%= link_to domaine_de_raba_path do %>
+          <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1664307611/flag_of_france_pdulkk.png', class: 'avatar' %>
+        <% end %>
+        <%= link_to domaine_de_raba_en_path do %>
+          <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1664307598/image_en_diq4zx.jpg', class: 'avatar' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 mx-auto">
+      <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1665407432/Capture_d_e%CC%81cran_2022-10-10_a%CC%80_15.02.42_d81kam.png' , class: 'img-fluid'%>
     </div>
   </div>
 </div>

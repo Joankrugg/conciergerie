@@ -20,11 +20,11 @@ class PagesController < ApplicationController
   end
 
   def chateau_de_sacy
-    @sacy_vip = SacyVip.new
+
   end
 
   def chateau_de_sacy_en
-    @sacy_vip = SacyVip.new
+
   end
 
   def le_soleil_d_or

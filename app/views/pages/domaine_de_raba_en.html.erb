@@ -1,7 +1,7 @@
 <div class="zone"></div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 mx-auto">
       <%= image_tag 'https://res.cloudinary.com/millesime33/image/upload/v1664195454/logo_raba-par_meix0l.png', class: 'img-fluid logo' %>
     </div>
   </div>
@@ -15,37 +15,11 @@
           <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1664307598/image_en_diq4zx.jpg', class: 'avatar' %>
         <% end %>
       </div>
-      <p class='polite'>Dear Mrs … / Dear Mr..</p>
-      <p class="text">In order to prepare your next stay, could you please tell us your preferred communication method? </p>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-      <div class="form">
-        <%= simple_form_for @raba_vip do |f| %>
-          <%= f.input :phone, label: 'Please acquaint your phone number', class: 'center' %>
-          <%= f.association :best_ways, as: :check_boxes,
-            input_html: { class: "squaretag-selector" },
-            item_wrapper_class: 'squaretag-item' %>
-          <%= f.input :email %>
-          <%= f.association :best_moments, as: :check_boxes,
-            input_html: { class: "squaretag-selector" },
-            item_wrapper_class: 'squaretag-item' %>
-          <%= f.button :submit, 'validate', id: 'validate' %>
-        <% end %>
-      </div>
+    <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 mx-auto">
+      <%= image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1665407433/Capture_d_e%CC%81cran_2022-10-10_a%CC%80_15.02.22_ljnhep.png' , class: 'img-fluid'%>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-
-      <p class= "regards">We look forward to welcoming you in Talence, </p>
-      <p class= "signature">William Numa </p>
-      <p class= "signature">Maitre de Maison </p>
-      <p class= "signature">+33 (0) 5 57 26 58 28 </p>
-      <p class= "signature">contact@domainederaba-talence.fr</p>
-    </div>
-  </div>
-
 </div>
