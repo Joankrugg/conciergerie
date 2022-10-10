@@ -22,28 +22,23 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <%= simple_form_for @megeve_vip do |f| %>
-          <fieldset class="form-group checkbox optional megeve_vip">
-            <legend class="col-form-label pt-0">In order to prepare your next stay, could you please tell us your preferred communication method?</legend>
+          <fieldset class="form-group check_boxes optional megeve_vip">
+            <legend class="col-form-label pt-0">In order to prepare your next stay, could you please tell us your preferred communication method? </legend>
             <input type="hidden" name="megeve_vip[best_way_id]" value="">
             <% BestWay.all[0..2].each do |best_way| %>
               <div class="squaretag-item">
-                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_way.id %>"  name="megeve_vip[best_way_id]" id="megeve_vip_id_<%= best_way.id %>">
-                <label class="form-check-label collection_checkbox" for="megeve_vip_id_<%= best_way.id %>">
-                  <%= best_way.name %>
-                </label>
+                <input class="form-check-input check_boxes optional squaretag-selector" type="checkbox" value="<%= best_way.id %>"name="megeve_vip[best_way_ids][]" id="megeve_vip_best_way_ids_<%= best_way.id %>">
+                <label class="form-check-label collection_check_boxes" for="megeve_vip_best_way_ids_<%= best_way.id %>"><%= best_way.name %></label>
               </div>
             <% end %>
           </fieldset>
-          <%= f.input :phone, label: 'Would you please acquaint your phone number' %>
-          <fieldset class="form-group checkbox optional megeve_vip">
+          <fieldset class="form-group check_boxes optional megeve_vip">
             <legend class="col-form-label pt-0">Which moment is the best to join you ? </legend>
             <input type="hidden" name="megeve_vip[best_moment_id]" value="">
             <% BestMoment.all[0..3].each do |best_moment| %>
               <div class="squaretag-item">
-                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_moment.id %>"  name="megeve_vip[best_moment_id]" id="megeve_vip_id_<%= best_moment.id %>">
-                <label class="form-check-label collection_checkbox" for="megeve_vip_id_<%= best_moment.id %>">
-                  <%= best_moment.name %>
-                </label>
+                <input class="form-check-input check_boxes optional squaretag-selector" type="checkbox" value="<%= best_moment.id %>"name="megeve_vip[best_moment_ids][]" id="megeve_vip_best_moment_ids_<%= best_moment.id %>">
+                <label class="form-check-label collection_check_boxes" for="megeve_vip_best_moment_ids_<%= best_moment.id %>"><%= best_moment.name %></label>
               </div>
             <% end %>
           </fieldset>

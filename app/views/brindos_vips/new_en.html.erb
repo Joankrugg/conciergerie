@@ -22,28 +22,23 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
         <%= simple_form_for @brindos_vip do |f| %>
-          <fieldset class="form-group checkbox optional brindos_vip">
+          <fieldset class="form-group check_boxes optional brindos_vip">
             <legend class="col-form-label pt-0">In order to prepare your next stay, could you please tell us your preferred communication method? </legend>
             <input type="hidden" name="brindos_vip[best_way_id]" value="">
             <% BestWay.all[0..2].each do |best_way| %>
               <div class="squaretag-item">
-                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_way.id %>"  name="brindos_vip[best_way_id]" id="brindos_vip_id_<%= best_way.id %>">
-                <label class="form-check-label collection_checkbox" for="brindos_vip_id_<%= best_way.id %>">
-                  <%= best_way.name %>
-                </label>
+                <input class="form-check-input check_boxes optional squaretag-selector" type="checkbox" value="<%= best_way.id %>"name="brindos_vip[best_way_ids][]" id="brindos_vip_best_way_ids_<%= best_way.id %>">
+                <label class="form-check-label collection_check_boxes" for="brindos_vip_best_way_ids_<%= best_way.id %>"><%= best_way.name %></label>
               </div>
             <% end %>
           </fieldset>
-          <%= f.input :phone, label: 'Would you please acquaint your phone number' %>
-          <fieldset class="form-group checkbox optional brindos_vip">
+          <fieldset class="form-group check_boxes optional brindos_vip">
             <legend class="col-form-label pt-0">Which moment is the best to join you ? </legend>
             <input type="hidden" name="brindos_vip[best_moment_id]" value="">
             <% BestMoment.all[0..3].each do |best_moment| %>
               <div class="squaretag-item">
-                <input class="form-check-input checkbox optional squaretag-selector" type="checkbox" value="<%= best_moment.id %>"  name="brindos_vip[best_moment_id]" id="brindos_vip_id_<%= best_moment.id %>">
-                <label class="form-check-label collection_checkbox" for="brindos_vip_id_<%= best_moment.id %>">
-                  <%= best_moment.name %>
-                </label>
+                <input class="form-check-input check_boxes optional squaretag-selector" type="checkbox" value="<%= best_moment.id %>"name="brindos_vip[best_moment_ids][]" id="brindos_vip_best_moment_ids_<%= best_moment.id %>">
+                <label class="form-check-label collection_check_boxes" for="brindos_vip_best_moment_ids_<%= best_moment.id %>"><%= best_moment.name %></label>
               </div>
             <% end %>
           </fieldset>
@@ -51,20 +46,21 @@
           <%= f.input :name %>
           <%= f.input :first_name %>
           <%= f.input :email, required: false %>
+          <%= f.input :phone, label: 'Would you please acquaint your phone number' %>
           <p>You now can process the validation</p>
           <%= f.button :submit, 'validate', id: 'validate' %>
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="form">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-        <p class= "signature">Dans l'attente de vous accueillir à Anglet</p><br>
-        <p class= "signature">Olivier Richard </p>
-        <p class= "signature">Maitre de Maison </p>
-        <p class= "signature">+33 (0)5 59 51 53 63 </p>
-        <p class= "signature">www.brindos-cotebasque.com </p>
+    <div class="form">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+          <p class= "signature">Dans l'attente de vous accueillir à Anglet</p><br>
+          <p class= "signature">Olivier Richard </p>
+          <p class= "signature">Maitre de Maison </p>
+          <p class= "signature">+33 (0)5 59 51 53 63 </p>
+          <p class= "signature">www.brindos-cotebasque.com </p>
+        </div>
       </div>
     </div>
   </div>
