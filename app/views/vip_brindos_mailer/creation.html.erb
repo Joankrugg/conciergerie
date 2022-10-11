@@ -2,17 +2,20 @@
 
 <% if @brindos_vip.first_name.present? && @brindos_vip.name.present? %>
   <p> Notre invité(e) <%= @brindos_vip.first_name + ' ' + @brindos_vip.name %> souhaite être contacté(e) par la conciergerie pour sa réservation prochaine</p>
-<% else %>
-  <p><%= @brindos_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine</p>
 <% end %>
-<p> Voici les méthode(s) préférée(s) renseignées.</p>
+
+<p> voici son email :<%= @brindos_vip.email %> </p>
+
+
 <% if @brindos_vip.best_ways.present? %>
+  <p> Voici les méthode(s) préférée(s) renseignées.</p>
   <% @brindos_vip.best_ways.each do |n| %>
     <p><%= n.name %></p>
   <% end %>
 <% end %>
-<p> Voici les moments à privilégier </p>
+
 <% if @brindos_vip.best_moments.present? %>
+  <p> Voici les moments à privilégier </p>
   <% @brindos_vip.best_moments.each do |n| %>
     <p><%= n.name %></p>
   <% end %>

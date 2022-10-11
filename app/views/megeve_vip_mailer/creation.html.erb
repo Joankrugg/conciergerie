@@ -2,20 +2,24 @@
 
 <% if @megeve_vip.first_name.present? && @megeve_vip.name.present? %>
   <p> Notre invité(e) <%= @megeve_vip.first_name + ' ' + @megeve_vip.name %> souhaite être contacté(e) par la conciergerie pour sa réservation prochaine</p>
-<% else %>
-  <p><%= @megeve_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine</p>
 <% end %>
-<p> Voici les méthode(s) préférée(s) renseignées.</p>
+
+<p> voici son email :<%= @megeve_vip.email %> </p>
+
+
 <% if @megeve_vip.best_ways.present? %>
+  <p> Voici les méthode(s) préférée(s) renseignées.</p>
   <% @megeve_vip.best_ways.each do |n| %>
     <p><%= n.name %></p>
   <% end %>
 <% end %>
-<p> Voici les moments à privilégier </p>
+
 <% if @megeve_vip.best_moments.present? %>
+  <p> Voici les moments à privilégier </p>
   <% @megeve_vip.best_moments.each do |n| %>
     <p><%= n.name %></p>
   <% end %>
 <% end %>
+
 <p>Voici le lien vers <%= link_to 'expérience hotel', 'https://www.experience-hotel.com/fr', target: 'blank'%> pour remplir les informations collectées dans la solution </p>
 <p> Belle Journée </p>
