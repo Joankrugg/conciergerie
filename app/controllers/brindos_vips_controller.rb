@@ -24,6 +24,6 @@ class BrindosVipsController < ApplicationController
   private
 
   def brindos_vip_params
-    params.require(:brindos_vip).permit(:email, :phone, best_way_ids: [], best_moment_ids: [])
+    params.require(:brindos_vip).permit(:name, :first_name, :email, :phone, best_way_ids: [], best_moment_ids: [])
   end
 end

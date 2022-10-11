@@ -1,3 +1,19 @@
-MegeveVip#creation
-
-<%= @greeting %>, find me in app/views/megeve_vip_mailer/creation.text.erb
+<% if @megève_vip.first_name.present? && @megève_vip.name.present? %>
+  Notre invité(e) <%= @megève_vip.first_name + ' ' + @megève_vip.name %> souhaite être contacté(e) par la conciergerie pour sa réservation prochaine
+<% else %>
+  <%= @megeve_vip.email %> souhaite passer par la conciergerie pour sa réservation prochaine
+<% end %>
+Voici les méthode(s) préférée(s) renseignées.
+<% if @megeve_vip.best_ways.present? %>
+  <% @megeve_vip.best_ways.each do |n| %>
+    <%= n.name %>
+  <% end %>
+<% end %>
+Voici les moments à privilégier
+<% if @megeve_vip.best_moments.present? %>
+  <% @megeve_vip.best_moments.each do |n| %>
+    <%= n.name %>
+  <% end %>
+<% end %>
+Voici le lien vers <%= link_to 'expérience hotel', 'https://www.experience-hotel.com/fr', target: 'blank'%> pour remplir les informations collectées dans la solution
+Belle Journée
